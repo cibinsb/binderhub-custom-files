@@ -3,7 +3,19 @@
 {{ super () }}
 <script type="text/javascript">
     function stopServer(){
-        console.log("Inside call Stop server ")
+        console.log("Inside call Stop server ");
+        $.ajax({
+            type: 'DELETE',
+            xhrFields: {
+                withCredentials: true
+            },
+            url: 'http://proxy-binder-felix.ac.uk:8080/hub/api/users/johnnyfelix/server',
+            success: function(response) {
+                console.log("API call success!");
+            }
+        }).done(function () {
+            console.log("API call done!");
+        });
     }
 </script>
 {% endblock footer %}
