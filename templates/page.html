@@ -1,10 +1,18 @@
 {% extends "templates/page.html" %}
+{% block footer %}
+{{ super () }}
+<script type="text/javascript">
+    function stopServer(){
+        console.log("Inside call Stop server ")
+    }
+</script>
+{% endblock footer %}
 
 {% block logo  %}
 {{ super () }}
-<div>
+<div class="container">
     <div class="btn-group" id="stop-buttons">
-        <button id="stop" class="btn-submit" type="button">Stop Server</button>
+        <button id="stop" class="btn-submit" onclick="stopServer()" type="button">Stop Server</button>
     </div>
 </div>
 {% endblock logo %}
