@@ -6,7 +6,7 @@
         console.log("Inside call Stop server ");
         var xhr = new XMLHttpRequest();
         xhr.open("DELETE", "http://proxy-binder-felix.ac.uk:8080/hub/api/users/johnnyfelix/server", true);
-        xhr.setRequestHeader("Authorization", "token x93xKEBLQa6A9FOWzZLhwQ");
+       // xhr.setRequestHeader("Authorization", "token x93xKEBLQa6A9FOWzZLhwQ");
         xhr.withCredentials = true;
         xhr.onload = function () {
             console.log("API call done!");
