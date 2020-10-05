@@ -13,7 +13,8 @@ const biobb_messages = [
 
  nextHelpText = function(){
         console.log("Inside new helper function ");
-        var text = $('div#loader-links p.text-center');
+        //var text = $('div#loader-links p.text-center');
+        var text = document.querySelector("div#loader-links p.text-center");
             if (text !== null) {
                 if (!text.hasClass('longLaunch')) {
                     // Pick a random help message and update
@@ -26,6 +27,6 @@ const biobb_messages = [
  }
 
  nextHelpText();
- 
+
 </script>
 {% endblock footer %}
