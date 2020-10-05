@@ -16,9 +16,10 @@ const biobb_messages = [
         //var text = $('div#loader-links p.text-center');
         var text = document.querySelector("div#loader-links p.text-center");
             if (text !== null) {
-                if (!text.hasClass('longLaunch')) {
-                    // Pick a random help message and update
-                    var msg = biobb_messages[Math.floor(Math.random() * help_messages.length)];
+                if (!text.classList.contains("longLaunch")) {
+                  console.log(" No class ! ");
+                  // Pick a random help message and update
+                   var msg = biobb_messages[Math.floor(Math.random() * help_messages.length)];
                 } else {
                     var msg = 'Your session is taking longer than usual to start!<br />Check the log messages below to see what is happening.';
                 }
