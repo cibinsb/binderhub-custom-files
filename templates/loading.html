@@ -11,7 +11,7 @@ const biobb_messages = [
     'Your launch may take longer after a new release of biobb tutorials. This is because our machine needs to create your environment.',
 ]
 
- export function nextHelpText (){
+ nextHelpText = function(){
         console.log("Inside new helper function ");
         var text = $('div#loader-links p.text-center');
             if (text !== null) {
@@ -23,6 +23,9 @@ const biobb_messages = [
                 }
                 text.html(msg);
             }
-    }
+ }
+
+ nextHelpText();
+ 
 </script>
 {% endblock footer %}
