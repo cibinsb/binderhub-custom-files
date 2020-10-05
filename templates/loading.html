@@ -1,5 +1,5 @@
 {% extends "templates/loading.html" %}
-{% block head %}
+{% block footer %}
 {{ super() }}
 <script type="text/javascript">
 
@@ -11,7 +11,7 @@ const biobb_messages = [
     'Your launch may take longer after a new release of biobb tutorials. This is because our machine needs to create your environment.',
 ]
 
- nextHelpText = function (){
+ export function nextHelpText (){
         console.log("Inside new helper function ");
         var text = $('div#loader-links p.text-center');
             if (text !== null) {
@@ -25,4 +25,4 @@ const biobb_messages = [
             }
     }
 </script>
-{% endblock head %}
+{% endblock footer %}
