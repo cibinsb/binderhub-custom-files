@@ -1,27 +1,8 @@
 {% extends "templates/page.html" %}
 {% block footer %}
-{{ super () }}
-<script type="text/javascript">
-    function stopServer(){
-        console.log("Inside call Stop server ");
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        xhr.open("DELETE", "http://proxy-binder-felix.ac.uk:8080/hub/api/users/johnnyfelix/server", true);
-       // xhr.setRequestHeader("Authorization", "token x93xKEBLQa6A9FOWzZLhwQ");
-
-        xhr.onload = function () {
-            console.log("API call done!");
-        };
-        xhr.send();
-    }
-</script>
-{% endblock footer %}
-
-{% block logo  %}
-{{ super () }}
 <div class="container">
-    <div class="btn-group" id="stop-buttons">
-        <button id="stop" class="btn-submit" onclick="stopServer()" type="button">Stop Server</button>
+    <div class="row text-center">
+      <h3>questions?<br/>read about <a href="https://mmb.irbbarcelona.org/biobb/workflows">the workflows</a>, see the <a href="https://github.com/jupyterhub/binderhub">BinderHub code</a>, ask for help with <a href="mailto:ecp@ebi.ac.uk">Binder for biobb</a></h3>
     </div>
-</div>
-{% endblock logo %}
+  </div>
+{% endblock footer %}
