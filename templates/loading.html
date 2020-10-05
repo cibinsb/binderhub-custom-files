@@ -19,11 +19,11 @@ const biobb_messages = [
                 if (!text.classList.contains("longLaunch")) {
                   console.log(" No class ! ");
                   // Pick a random help message and update
-                   var msg = biobb_messages[Math.floor(Math.random() * help_messages.length)];
+                   var msg = biobb_messages[Math.floor(Math.random() * biobb_messages.length)];
                 } else {
                     var msg = 'Your session is taking longer than usual to start!<br />Check the log messages below to see what is happening.';
                 }
-                text.html(msg);
+                text.innerHTML = msg;
             }
  }
 
