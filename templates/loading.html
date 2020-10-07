@@ -2,7 +2,6 @@
 {% block footer %}
 {{ super() }}
 <script type="text/javascript">
-
 const biobb_messages = [
 	'We use the <a target="_blank" href="https://repo2docker.readthedocs.io/">repo2docker</a> tool to automatically build the environment for the notebooks.',
     'If a repository takes a long time to launch, it is usually because Binder needs to create the environment for the first time.',
@@ -11,13 +10,14 @@ const biobb_messages = [
     'Your launch may take longer after a new release of biobb tutorials. This is because our machine needs to create your environment.',
 ]
 
- nextHelpText = function(){
-        console.log("Inside new helper function ");
-        //var text = $('div#loader-links p.text-center');
-        var text = document.querySelector("div#loader-links p.text-center");
+ var loaderDiv = document.querySelector("div#loader-links");
+ var loaderDivInnerHtml = "<p>We use the <a target='_blank' href='https://repo2docker.readthedocs.io/'>repo2docker</a> tool to automatically build the environment for the notebooks.</p>";
+ loaderDiv.innerHTML = loaderDivInnerHtml;
+
+ biobbHelpText = function(){
+         var text = document.querySelector("div#loader-links p");
             if (text !== null) {
                 if (!text.classList.contains("longLaunch")) {
-                  console.log(" No class ! ");
                   // Pick a random help message and update
                    var msg = biobb_messages[Math.floor(Math.random() * biobb_messages.length)];
                 } else {
@@ -27,7 +27,8 @@ const biobb_messages = [
             }
  }
 
- nextHelpText();
+ const launchMessageInterval = 6 * 1000
+ setInterval(biobbHelpText, launchMessageInterval);
 
 </script>
 {% endblock footer %}
