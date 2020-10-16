@@ -10,14 +10,14 @@
           <img width="100px" src="{{ EXTRA_STATIC_URL_PREFIX }}bioexcel.png">
       </div>
      <div style="float: right">
-         <img width="100px" src="{{ EXTRA_STATIC_URL_PREFIX }}ebi.png">
+         <img width="100px" src="{{ EXTRA_STATIC_URL_PREFIX }}emblebi.png">
      </div>
      </div>
  </div>
 {{ super() }}
 {% block logo %}
      <div id="logo-container">
-        <img id="logo" style="margin-top: 0.5%" src="{{static_url("logo.svg")}}" width="30%">
+        <img id="logo" style="padding-top: 25px" src="{{ EXTRA_STATIC_URL_PREFIX }}binder.png" width="30%">
          <img src="{{ EXTRA_STATIC_URL_PREFIX }}for.png" width="8%">
          <img id="logo1" src="{{ EXTRA_STATIC_URL_PREFIX }}biobb.png">
       </div>
