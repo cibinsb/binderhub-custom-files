@@ -6,9 +6,12 @@
   {% endblock head %}
 {% block body %}
 <div id="banner-container">
-     <div>
-        <img class="small-logo" src="{{ EXTRA_STATIC_URL_PREFIX }}bioexcel.png">
-        <img class="small-logo" src="{{ EXTRA_STATIC_URL_PREFIX }}ebi.png">
+      <div style="float: left">
+          <img width="100px" src="{{ EXTRA_STATIC_URL_PREFIX }}bioexcel.png">
+      </div>
+     <div style="float: right">
+         <img width="100px" src="{{ EXTRA_STATIC_URL_PREFIX }}ebi.png">
+     </div>
      </div>
  </div>
 {{ super() }}
