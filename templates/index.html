@@ -1,5 +1,23 @@
 {% extends "templates/index.html" %}
 
+{% block stylesheet %}
+<meta id="base-url" data-url="{{ binder_base_url }}">
+<meta id="badge-base-url" data-url="{{badge_base_url}}">
+{# static files from binder #}
+<script src="{{ static_binder }}dist/bundle.js?v={{ static_version }}"></script>
+<link href="{{ static_binder }}dist/styles.css?v={{ static_version }}" rel="stylesheet"/>
+<link rel="stylesheet" href="{{ static_url("components/bootstrap/dist/css/bootstrap.min.css") }}" type="text/css"/>
+{{ super() }}
+<link rel="stylesheet" href="{{ static_url("persistent_bhub/persistent_bhub.css") }}" type="text/css"/>
+{% endblock stylesheet %}
+
+{% block scripts %}
+    <script src="{{static_url("components/requirejs/require.js") }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{static_url("components/jquery/dist/jquery.min.js") }}" type="text/javascript" charset="utf-8"></script>
+{#    <script src="{{static_url("components/bootstrap/dist/js/bootstrap.min.js") }}" type="text/javascript" charset="utf-8"></script>#}
+{% endblock scripts %}
+
+
 {% block header %}
 <div id="header" class="text-center">
 <h3>Try BioExcel Building Blocks workflows as interactive notebooks</h3>
@@ -8,6 +26,10 @@
 </div>
 </div>
 {% endblock header %}
+
+{% block projects_form %}
+  {% include "projects_form.html" %}
+  {% endblock projects_form %}
 
 {% block how_it_works %}
   <div id="how-it-works">
@@ -44,3 +66,11 @@ Users cannot see the notebooks run by other users, but please avoid entering sec
     </div>
   </div>
   {% endblock how_it_works %}
+
+{% block script %}
+<script src="{{static_url("persistent_bhub/persistent_bhub.js") }}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+// initialize binder form
+indexMain();
+</script>
+{% endblock %}
