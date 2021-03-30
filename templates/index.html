@@ -27,9 +27,25 @@
 </div>
 {% endblock header %}
 
-{% block projects_form %}
+{% block main %}
+<div id="main-container" class="container">
+  {% block binder_header %}
+    <div id="header" class="text-center">
+        {#      <h3>Turn a Git repo into a collection of interactive notebooks</h3>#}
+        <div id="explanation">
+            {% block persistency_explanation %}
+            {{ persistency_explanation|safe }}
+            {% endblock persistency_explanation %}
+        </div>
+    </div>
+  {% endblock binder_header %}
+
+  {% block projects_form %}
   {% include "projects_form.html" %}
   {% endblock projects_form %}
+
+</div>
+{% endblock main %}
 
 {% block how_it_works %}
   <div id="how-it-works">
